@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import RegionChooser from "./RegionChooser";
+import ErrorSpecifier from "./ErrorSpecifier";
+import DefineSeedInput from "./SeedInput";
 
 const StyledSidebar = styled.div`
   position: fixed;
@@ -37,7 +40,6 @@ const StyledCloseButton = styled(Button)`
   display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
-
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,15 +60,22 @@ const Sidebar = () => {
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </StyledCloseButton>
               </NavItem>
+              <Button variant="primary" size="lg">
+                Random
+              </Button>{" "}
               <NavItem>
                 <NavLink tag={Link} to="/">
                   Home
                 </NavLink>
+                <NavItem>
+                  <DefineSeedInput />
+                </NavItem>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/about">
-                  About
-                </NavLink>
+                <RegionChooser />
+              </NavItem>
+              <NavItem>
+                <ErrorSpecifier />
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} to="/contact">

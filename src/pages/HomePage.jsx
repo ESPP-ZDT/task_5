@@ -1,10 +1,12 @@
 import Sidebar from "../components/Sidebar";
-import faker from 'faker';
+import DataDisplayer from "../components/DataDisplayer";
+
 
 const HomePage = () => {
   return (
     <div>
       <Sidebar/>
+      <DataDisplayer/>
         
     </div>
   )
